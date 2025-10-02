@@ -10,6 +10,9 @@ model = LiteLlm(
 )
 
 def get_dad_joke():
+    """
+    Returns a dad joke
+    """
     dad_jokes = [
         "Why don't scientists trust atoms? Because they make up everything!",
         "Why did the scarecrow win an award? Because he was outstanding in his field!",
@@ -29,7 +32,7 @@ root_agent = Agent(
     description="This agent tells a dad joke.",
     instruction="""
     You are a helpful assistant that tells dad jokes to the users.
-    You have access to the get_dad_joke function that returns a dad joke.
+    Only use the tool 'get_dad_joke' to tell the user a dad joke.
     """,
     tools=[get_dad_joke]
 )
